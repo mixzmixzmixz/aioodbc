@@ -1,5 +1,5 @@
 # NOTE: stretch was very crashy when using https://dev.mysql.com/get/Downloads/Connector-ODBC/8.0/mysql-connector-odbc-8.0.16-linux-debian9-x86-64bit.tar.gz
-FROM python:3.6.8-slim-jessie
+FROM python:3.10.0rc2-slim-buster
 
 # configure apt to install minimal dependencies in non-interactive mode.
 ENV DEBIAN_FRONTEND noninteractive

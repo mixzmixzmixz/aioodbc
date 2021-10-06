@@ -18,7 +18,7 @@ _CONN_CLOSE_ERRORS = {
 }
 
 
-def _is_conn_close_error(e):
+def _is_conn_close_error(e) -> bool:
     if not isinstance(e, Error) or len(e.args) < 2:
         return False
 
@@ -37,7 +37,7 @@ class _ContextManager(Coroutine):
 
     __slots__ = ('_coro', '_obj')
 
-    def __init__(self, coro):
+    def __init__(self, coro: Coroutine):
         self._coro = coro
         self._obj = None
 
@@ -97,7 +97,7 @@ class _PoolConnectionContextManager(_ContextManager):
 
     __slots__ = ('_coro', '_conn', '_pool')
 
-    def __init__(self, coro, pool):
+    def __init__(self, coro: Coroutine, pool):
         self._coro = coro
         self._conn = None
         self._pool = pool

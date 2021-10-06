@@ -18,7 +18,6 @@ class Cursor:
     def __init__(self, pyodbc_cursor, connection, echo=False):
         self._conn = connection
         self._impl = pyodbc_cursor
-        self._loop = connection.loop
         self._echo = echo
 
     async def _run_operation(self, func, *args, **kwargs):
